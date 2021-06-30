@@ -22,6 +22,8 @@ export const seed = async (knex) => {
       password: await makeHash('pass_12345'),
     },
   ])
+
+  return
   /* return await knex('users')
     .del()
     .then(() => {
