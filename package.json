@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon",
+    "prod": "NODE_ENV=production node index.js",
     "migrate": "knex migrate:latest",
     "seed:make": "knex seed:make dev",
     "seed:run": "knex seed:run dev",
