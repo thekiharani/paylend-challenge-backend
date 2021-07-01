@@ -3,6 +3,7 @@ import cors from 'cors'
 import router from "./routes/index.js";
 import authRouter from './routes/auth.js'
 import dbSetup from './database/dbSetup.js'
+import { APP_PORT } from './config.js'
 
 dbSetup()
 
@@ -14,8 +15,7 @@ app.use('/', router)
 app.use('/api', authRouter)
 
 const HOST = 'localhost'
-const PORT = 8200
 
-app.listen(PORT, () =>
-  console.log(`dev server running at: http://${HOST}:${PORT}`)
+app.listen(APP_PORT, () =>
+  console.log(`dev server running at: http://${HOST}:${APP_PORT}`)
 )
