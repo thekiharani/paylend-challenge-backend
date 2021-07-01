@@ -40,7 +40,10 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { error } = signinValidation(req.body)
-    if (error) return res.status(422).json(error.details)
+    if (error)
+      return res
+        .status(422)
+        .json({ message: error.details[0].message.replace(/['"]/g, '') })
 
     const { email, password } = req.body
     const user = await User.query().findOne({
