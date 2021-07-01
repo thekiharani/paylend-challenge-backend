@@ -14,7 +14,7 @@ app.use(cors())
 app.use('/', router)
 app.use('/api', authRouter)
 
-const HOST = 'localhost'
+const HOST = '0.0.0.0'
 
 app.listen(APP_PORT, () =>
   console.log(`dev server running at: http://${HOST}:${APP_PORT}`)
